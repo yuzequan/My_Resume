@@ -128,45 +128,72 @@
   <!-- 顶部装饰条 -->
   <div class="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy-800 via-gold-400 to-navy-800 z-50"></div>
 
+  <!-- 固定导航栏 -->
+  <nav class="fixed top-1 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-cream-300 shadow-sm transition-all duration-300" id="navbar">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center justify-between h-14">
+        <a href="#section-basic" class="font-display text-xl text-navy-900 font-semibold hover:text-gold-600 transition-colors">余生 · 简历</a>
+        <div class="hidden md:flex items-center gap-6">
+          <a href="#section-basic" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">基本信息</a>
+          <a href="#section-summary" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">个人简介</a>
+          <a href="#section-experience" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">从业经验</a>
+          <a href="#section-works" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">作品展示</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-navy-600 hover:text-gold-600">
+          <i class="fas fa-bars text-lg"></i>
+        </button>
+      </div>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-cream-300">
+      <div class="px-6 py-3 space-y-2">
+        <a href="#section-basic" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">基本信息</a>
+        <a href="#section-summary" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">个人简介</a>
+        <a href="#section-experience" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">从业经验</a>
+        <a href="#section-works" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">作品展示</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- 主容器 -->
   <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
 
     <!-- ======== 区域一：基础信息区 ======== -->
     <header class="fade-in-up" id="section-basic">
       <div class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
-        <!-- 头像占位 -->
+        <!-- 头像 -->
         <div class="flex-shrink-0">
-          <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 border-4 border-white shadow-xl flex items-center justify-center overflow-hidden">
-            <span class="text-gold-300 font-display text-4xl md:text-5xl">N</span>
+          <div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-white shadow-xl overflow-hidden">
+            <img src="images/ResumePicture.jpg" alt="余生" class="w-full h-full object-cover">
           </div>
         </div>
 
         <!-- 个人信息 -->
         <div class="flex-1">
           <h1 class="font-display text-4xl md:text-5xl text-navy-900 font-semibold tracking-tight mb-1">
-            「姓名」
+            余生
           </h1>
           <p class="text-gold-600 text-lg md:text-xl font-medium mb-5 tracking-wide">
-            「岗位名称 / 职业方向」
+            高级产品经理
           </p>
 
           <!-- 联系信息网格 -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm md:text-base">
             <div class="flex items-center gap-3 text-navy-700">
               <i class="fas fa-mobile-alt text-gold-500 w-5 text-center"></i>
-              <span>「手机号码」</span>
+              <span>13570380453</span>
             </div>
             <div class="flex items-center gap-3 text-navy-700">
               <i class="fas fa-envelope text-gold-500 w-5 text-center"></i>
-              <span>「邮箱地址」</span>
+              <span>1225680461@qq.com</span>
             </div>
             <div class="flex items-center gap-3 text-navy-700">
               <i class="fas fa-graduation-cap text-gold-500 w-5 text-center"></i>
-              <span>「学校名称 · 专业 · 学历」</span>
+              <span>广东工业大学 · 硕士 MBA | 广东技术师范大学 · 本科 网络工程</span>
             </div>
             <div class="flex items-center gap-3 text-navy-700">
               <i class="fas fa-map-marker-alt text-gold-500 w-5 text-center"></i>
-              <span>「所在城市」</span>
+              <span>广州</span>
             </div>
           </div>
 
@@ -565,15 +592,10 @@
       <!-- 作品卡片网格（等分） -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
 
-        <!-- 作品卡片 1：咨询师之家 / B端咨询师管理SaaS -->
-        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+        <!-- 作品卡片 1：师生互联与视频教学系统 -->
+        <a href="https://u.pmdaniu.com/GvV2L" target="_blank" rel="noopener noreferrer" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
           <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
-            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
-              <div class="text-center">
-                <i class="fas fa-user-tie text-4xl text-navy-400 mb-2"></i>
-                <p class="text-xs text-navy-400">二维码占位</p>
-              </div>
-            </div>
+            <img src="images/【B端】师生互联与访谈系统.png" alt="师生互联与视频教学系统" class="w-36 h-36 object-contain bg-white rounded-lg shadow-inner border border-cream-300">
             <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
               <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
                 查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
@@ -581,25 +603,20 @@
             </div>
           </div>
           <div class="p-6">
-            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">壹心理</div>
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">C端 · 壹心理</div>
             <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
-              咨询师之家 · B端咨询师管理SaaS
+              师生互联与视频教学系统
             </h3>
             <p class="text-navy-600 text-sm leading-relaxed">
-              从0搭建B端咨询师管理SaaS系统，覆盖机构管理、入驻认证、结算系统、交付服务全链路，入驻咨询师2,000+。
+              壹心理项目，支持师生实时互动与视频教学，实现在线心理咨询与辅导的高效交付。
             </p>
           </div>
         </a>
 
-        <!-- 作品卡片 2：AI练习室 -->
-        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+        <!-- 作品卡片 2：咨询师管理SaaS -->
+        <a href="https://u.pmdaniu.com/ANY23" target="_blank" rel="noopener noreferrer" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
           <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
-            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
-              <div class="text-center">
-                <i class="fas fa-robot text-4xl text-navy-400 mb-2"></i>
-                <p class="text-xs text-navy-400">二维码占位</p>
-              </div>
-            </div>
+            <img src="images/【B端】咨询师机构与人员管理系统（prd）.png" alt="咨询师管理SaaS" class="w-36 h-36 object-contain bg-white rounded-lg shadow-inner border border-cream-300">
             <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
               <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
                 查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
@@ -607,25 +624,20 @@
             </div>
           </div>
           <div class="p-6">
-            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">AI产品</div>
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">B端 · 壹心理</div>
             <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
-              咨询师AI练习室
+              咨询师管理SaaS
             </h3>
             <p class="text-navy-600 text-sm leading-relaxed">
-              大模型驱动的多轮对话模拟系统，构建虚拟来访者角色，支持咨询技能训练，累计销售30,000+单。
+              从0搭建B端咨询师管理系统，覆盖机构管理、入驻认证、结算系统、交付服务全链路。
             </p>
           </div>
         </a>
 
-        <!-- 作品卡片 3：保利威AI产品体系 -->
-        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+        <!-- 作品卡片 3：幼儿拼音智能课件系统 -->
+        <a href="https://u.pmdaniu.com/ANY23" target="_blank" rel="noopener noreferrer" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
           <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
-            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
-              <div class="text-center">
-                <i class="fas fa-brain text-4xl text-navy-400 mb-2"></i>
-                <p class="text-xs text-navy-400">二维码占位</p>
-              </div>
-            </div>
+            <img src="images/【C端】K12-幼儿智能识字课（含配置后台）.png" alt="幼儿拼音智能课件系统" class="w-36 h-36 object-contain bg-white rounded-lg shadow-inner border border-cream-300">
             <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
               <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
                 查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
@@ -633,25 +645,20 @@
             </div>
           </div>
           <div class="p-6">
-            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">保利威</div>
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">C端 · 荷小鱼</div>
             <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
-              保利威AI产品体系
+              幼儿拼音智能课件系统
             </h3>
             <p class="text-navy-600 text-sm leading-relaxed">
-              业内首家AI功能SaaS化音视频公司，覆盖AI制课、视频总结、智能裁剪、数字人、PPT智能课件五大模块。
+              荷小鱼项目，大模型驱动的结构化拼音课件生成系统，支持自定义课程素材配置。
             </p>
           </div>
         </a>
 
-        <!-- 作品卡片 4：ChatBot智能客服 -->
-        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+        <!-- 作品卡片 4：台州视频直播系统 -->
+        <a href="https://u.pmdaniu.com/vlpz0" target="_blank" rel="noopener noreferrer" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
           <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
-            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
-              <div class="text-center">
-                <i class="fas fa-comments text-4xl text-navy-400 mb-2"></i>
-                <p class="text-xs text-navy-400">二维码占位</p>
-              </div>
-            </div>
+            <img src="images/【B端】台州银行直播项目.png" alt="台州视频直播系统" class="w-36 h-36 object-contain bg-white rounded-lg shadow-inner border border-cream-300">
             <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
               <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
                 查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
@@ -659,64 +666,12 @@
             </div>
           </div>
           <div class="p-6">
-            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">AI应用</div>
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">B端 · 易方信息</div>
             <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
-              ChatBot智能客服
+              台州视频直播系统
             </h3>
             <p class="text-navy-600 text-sm leading-relaxed">
-              基于大模型+RAG的智能客服系统，月均承接20万+咨询，人工介入率降低60%，大幅提升响应效率。
-            </p>
-          </div>
-        </a>
-
-        <!-- 作品卡片 5：掌门AI 1对1 -->
-        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
-          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
-            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
-              <div class="text-center">
-                <i class="fas fa-chalkboard-teacher text-4xl text-navy-400 mb-2"></i>
-                <p class="text-xs text-navy-400">二维码占位</p>
-              </div>
-            </div>
-            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
-              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
-                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
-              </span>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">掌门1对1</div>
-            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
-              掌门AI 1对1学科辅导
-            </h3>
-            <p class="text-navy-600 text-sm leading-relaxed">
-              三个月从0搭建AI 1对1学科辅导平台，覆盖PC/APP/后台全端，课程到课率92%，供给端成本降低30%。
-            </p>
-          </div>
-        </a>
-
-        <!-- 作品卡片 6：小灯塔学堂 -->
-        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
-          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
-            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
-              <div class="text-center">
-                <i class="fas fa-rocket text-4xl text-navy-400 mb-2"></i>
-                <p class="text-xs text-navy-400">二维码占位</p>
-              </div>
-            </div>
-            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
-              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
-                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
-              </span>
-            </div>
-          </div>
-          <div class="p-6">
-            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">小灯塔</div>
-            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
-              小灯塔学堂增长体系
-            </h3>
-            <p class="text-navy-600 text-sm leading-relaxed">
-              微信生态少儿通识教育平台，团购分销+复购体系，年增180万用户，付费率90%，月营收千万级。
+              保利威易方项目，企业级视频直播解决方案，支持直播、点播、互动等核心功能模块。
             </p>
           </div>
         </a>
@@ -727,7 +682,7 @@
     <!-- 页脚 -->
     <footer class="mt-20 md:mt-28 pt-8 border-t border-cream-300 text-center">
       <p class="text-navy-500 text-sm">
-        © 2026 <span class="text-navy-700 font-medium">「姓名」</span> · 个人简历主页 · 感谢您的阅读
+        © 2026 <span class="text-navy-700 font-medium">余生</span> · 个人简历主页 · 感谢您的阅读
       </p>
     </footer>
 
@@ -741,13 +696,11 @@
         const exp = this.dataset.exp;
         const tab = this.dataset.tab;
 
-        // 切换按钮状态
         document.querySelectorAll(`.tab-btn[data-exp="${exp}"]`).forEach(b => {
           b.classList.remove('tab-active');
         });
         this.classList.add('tab-active');
 
-        // 切换内容显示
         document.querySelectorAll(`.tab-content[id^="${exp}-"]`).forEach(content => {
           content.classList.add('hidden');
         });
@@ -775,6 +728,88 @@
 
     document.querySelectorAll('.fade-in-up').forEach(el => {
       observer.observe(el);
+    });
+
+    // ===== 导航栏滚动效果 =====
+    const navbar = document.getElementById('navbar');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('shadow-md');
+        navbar.classList.remove('shadow-sm');
+      } else {
+        navbar.classList.remove('shadow-md');
+        navbar.classList.add('shadow-sm');
+      }
+
+      lastScrollY = window.scrollY;
+    });
+
+    // ===== 导航高亮 =====
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id], header[id]');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop - 80 && window.scrollY < sectionTop + sectionHeight - 80) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-gold-600');
+        link.classList.add('text-navy-600');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.remove('text-navy-600');
+          link.classList.add('text-gold-600');
+        }
+      });
+    });
+
+    // ===== 移动端菜单 =====
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileMenuBtn.querySelector('i');
+      if (mobileMenu.classList.contains('hidden')) {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      } else {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      });
+    });
+
+    // ===== 平滑滚动 =====
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 60;
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
     });
   </script>
 
