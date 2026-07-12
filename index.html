@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人简历 | Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: {
+              50: '#f0f3f8',
+              100: '#d9e0ec',
+              200: '#b3c1d9',
+              300: '#8d9fc6',
+              400: '#6780b3',
+              500: '#4a6499',
+              600: '#3a4f7a',
+              700: '#2b3a5c',
+              800: '#1c263d',
+              900: '#0f1624',
+            },
+            gold: {
+              50: '#faf6ec',
+              100: '#f3e9c8',
+              200: '#e7d291',
+              300: '#dbbb5a',
+              400: '#cfa830',
+              500: '#b89325',
+              600: '#8f721d',
+              700: '#675116',
+              800: '#3f310e',
+              900: '#181205',
+            },
+            cream: {
+              50: '#fdfcfa',
+              100: '#f9f6f0',
+              200: '#f3ede2',
+              300: '#e8dfcc',
+            }
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', '"Noto Serif SC"', 'serif'],
+            body: ['"Source Sans Pro"', '"Noto Sans SC"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .text-balance {
+        text-wrap: balance;
+      }
+      .gold-line {
+        background: linear-gradient(90deg, transparent, #cfa830, transparent);
+      }
+      .section-divider {
+        position: relative;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(43, 58, 92, 0.2), transparent);
+      }
+      .section-divider::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 48px;
+        height: 3px;
+        background: #cfa830;
+      }
+      .card-hover {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .card-hover:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px -12px rgba(15, 22, 36, 0.15);
+      }
+      .fade-in-up {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .tab-active {
+        position: relative;
+        color: #1c263d;
+        font-weight: 600;
+      }
+      .tab-active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #cfa830;
+      }
+      .timeline-dot {
+        position: relative;
+      }
+      .timeline-dot::before {
+        content: '';
+        position: absolute;
+        left: -26px;
+        top: 8px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cfa830;
+        box-shadow: 0 0 0 4px rgba(207, 168, 48, 0.15);
+      }
+    }
+  </style>
+</head>
+<body class="font-body text-navy-800 bg-cream-100 antialiased leading-relaxed">
+
+  <!-- 顶部装饰条 -->
+  <div class="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-navy-800 via-gold-400 to-navy-800 z-50"></div>
+
+  <!-- 主容器 -->
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+
+    <!-- ======== 区域一：基础信息区 ======== -->
+    <header class="fade-in-up" id="section-basic">
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12">
+        <!-- 头像占位 -->
+        <div class="flex-shrink-0">
+          <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-br from-navy-700 to-navy-900 border-4 border-white shadow-xl flex items-center justify-center overflow-hidden">
+            <span class="text-gold-300 font-display text-4xl md:text-5xl">N</span>
+          </div>
+        </div>
+
+        <!-- 个人信息 -->
+        <div class="flex-1">
+          <h1 class="font-display text-4xl md:text-5xl text-navy-900 font-semibold tracking-tight mb-1">
+            「姓名」
+          </h1>
+          <p class="text-gold-600 text-lg md:text-xl font-medium mb-5 tracking-wide">
+            「岗位名称 / 职业方向」
+          </p>
+
+          <!-- 联系信息网格 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3 text-sm md:text-base">
+            <div class="flex items-center gap-3 text-navy-700">
+              <i class="fas fa-mobile-alt text-gold-500 w-5 text-center"></i>
+              <span>「手机号码」</span>
+            </div>
+            <div class="flex items-center gap-3 text-navy-700">
+              <i class="fas fa-envelope text-gold-500 w-5 text-center"></i>
+              <span>「邮箱地址」</span>
+            </div>
+            <div class="flex items-center gap-3 text-navy-700">
+              <i class="fas fa-graduation-cap text-gold-500 w-5 text-center"></i>
+              <span>「学校名称 · 专业 · 学历」</span>
+            </div>
+            <div class="flex items-center gap-3 text-navy-700">
+              <i class="fas fa-map-marker-alt text-gold-500 w-5 text-center"></i>
+              <span>「所在城市」</span>
+            </div>
+          </div>
+
+          <!-- 社交平台链接 -->
+          <div class="flex items-center gap-4 mt-6">
+            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="GitHub">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="LinkedIn">
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="个人博客">
+              <i class="fas fa-globe text-lg"></i>
+            </a>
+            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="微信">
+              <i class="fab fa-weixin text-lg"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 分隔线 -->
+    <div class="section-divider my-16 md:my-20"></div>
+
+    <!-- ======== 区域二：个人经历简述 ======== -->
+    <section class="fade-in-up" id="section-summary">
+      <div class="text-center mb-10">
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 font-semibold mb-3">个人简介</h2>
+        <div class="w-16 h-0.5 bg-gold-400 mx-auto"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-lg shadow-sm border border-cream-300 p-8 md:p-10 relative">
+          <!-- 装饰引号 -->
+          <i class="fas fa-quote-left text-gold-200 text-4xl absolute top-6 left-6"></i>
+          <p class="text-navy-700 text-lg leading-loose text-balance relative z-10 pl-6">
+            十年互联网产品经理经验，深耕在线教育与心理健康赛道，擅长从 0 到 1 搭建产品体系与 AI 应用落地。历任壹心理、保利威、掌门 1 对 1 等头部企业高级产品经理，累计带领 15-30 人产研团队，主导过 B 端 SaaS 管理系统、C 端教育平台、AI 对话产品等多条核心产品线。精通大模型应用（RAG、Agent、多模态）、用户增长体系、B/C 双端业务闭环设计，具备敏锐的业务洞察力与跨团队协作能力，曾多次带领团队实现业务规模化突破与成本显著优化。
+          </p>
+          <i class="fas fa-quote-right text-gold-200 text-4xl absolute bottom-6 right-6"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分隔线 -->
+    <div class="section-divider my-16 md:my-20"></div>
+
+    <!-- ======== 区域三：从业经验详细说明 ======== -->
+    <section class="fade-in-up" id="section-experience">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 font-semibold mb-3">从业经验</h2>
+        <div class="w-16 h-0.5 bg-gold-400 mx-auto"></div>
+      </div>
+
+      <!-- 工作经历列表（倒序排列：最新在前） -->
+      <div class="space-y-12 md:space-y-16">
+
+        <!-- 第1段：广州人心网络（壹心理） -->
+        <article class="experience-item">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-2xl text-navy-900 font-semibold">广州人心网络 · 壹心理</h3>
+              <p class="text-gold-600 font-medium text-lg">高级产品经理（产研15人团队）</p>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2024.06 — 2026.06
+            </div>
+          </div>
+
+          <div class="border-b border-cream-300 mb-6">
+            <div class="flex gap-8">
+              <button class="tab-btn tab-active py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-content" data-exp="exp1">
+                工作内容
+              </button>
+              <button class="tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-achievement" data-exp="exp1">
+                工作业绩
+              </button>
+            </div>
+          </div>
+
+          <!-- 工作内容 -->
+          <div class="tab-content" id="exp1-work-content">
+            <ul class="space-y-5 pl-8 border-l-2 border-cream-300">
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【项目统筹】</span>
+                <span class="text-navy-700">作为「咨询师之家」平台产品负责人，统筹 APP、小程序、Web 三端的产品规划与迭代节奏，制定需求优先级框架与资源调配策略，管理 15 人产研团队从需求评审到交付上线的全流程，建立进度质量监督与风险预警机制，确保平台在多端协同下稳定交付、支撑业务规模化运转。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【系统搭建】</span>
+                <span class="text-navy-700">作为 B 端咨询师管理 SaaS 系统的主策划，完成三期功能迭代从 0 搭建，核心模块覆盖机构管理体系（注册、资质审核、层级管理）、咨询师入驻与资料管理（入驻流程、资质认证、档案管理）、咨询师结算系统（计费规则引擎、对账结算、账单管理）以及交付服务系统（服务预约、交付记录、评价反馈），构建了 C 端流量获客 → B 端机构入驻 → 咨询师服务交付 → 结算闭环的完整业务链路，实现了从纯 C 端运营到 B 端+C 端双轮驱动的业务模式升级。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【AI 产品交付】</span>
+                <span class="text-navy-700">主导多款 ToC 方向 AI 应用的研发与上线：</span>
+                <ul class="mt-2 ml-5 space-y-2 text-navy-700 text-[0.95em]">
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span><strong>ChatBot 智能客服</strong>：基于大语言模型对话系统，结合 RAG（检索增强生成）技术接入业务知识库，实现咨询问答的语义理解与结构化回复，有效替代高频标准化人工客服场景。</span></li>
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span><strong>咨询师 AI 练习室</strong>：基于大模型驱动的多轮对话模拟系统，构建虚拟来访者角色，支持咨询师进行一对一咨询模拟训练，涵盖对话生成、情绪识别、咨询策略反馈等功能。</span></li>
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span><strong>AI 智能巡课系统</strong>：结合监课 Agent 和相关 Coze 工作流，将课程交付的监课环节从纯人工质检改为 AI 智能执行，定时定点监控基础课堂数据、课堂风险点回溯、讲师能力识别等。</span></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 工作业绩 -->
+          <div class="tab-content hidden" id="exp1-work-achievement">
+            <ul class="space-y-5 pl-8 border-l-2 border-gold-200">
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  <strong class="text-navy-900">B 端咨询师管理系统：</strong>目前入驻咨询师超 2,000 人，月活跃服务率持续高于 85%，支撑了平台 B 端供给侧的规模化运转。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  <strong class="text-navy-900">AI 练习室：</strong>2024 年底上线，累计销售超 30,000 单，在心理咨询师垂直群体中渗透率稳步提升，成为国内咨询师技能训练的标配工具之一。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  <strong class="text-navy-900">ChatBot 智能客服：</strong>月均承接 20 万+次用户咨询，基于意图识别与多轮对话分流，人工客服介入率降低约 60%，显著提升服务响应效率与用户体验。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  <strong class="text-navy-900">AI 智能监课：</strong>人工监课成本下降 80%。
+                </span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 第2段：易方信息科技（保利威） -->
+        <article class="experience-item">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-2xl text-navy-900 font-semibold">易方信息科技 · 保利威</h3>
+              <p class="text-gold-600 font-medium text-lg">高级产品经理 / 教培 SaaS 产品线负责人</p>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2021.09 — 2023.09
+            </div>
+          </div>
+
+          <div class="border-b border-cream-300 mb-6">
+            <div class="flex gap-8">
+              <button class="tab-btn tab-active py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-content" data-exp="exp2">
+                工作内容
+              </button>
+              <button class="tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-achievement" data-exp="exp2">
+                工作业绩
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="exp2-work-content">
+            <ul class="space-y-5 pl-8 border-l-2 border-cream-300">
+              <li class="timeline-dot">
+                <span class="text-navy-700">负责公司教培 SaaS 产品线整体规划与交付，统筹管理直播、点播、AI 三条产品线的需求规划与团队管理，主导 AI 能力从大模型选型到应用层落地的全链路架构设计与迭代。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">负责网页端、客户端、移动端三端的产品架构统一管理，带领 25 人产研团队完成从需求评审、技术方案决策到交付验收的完整项目管理闭环。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">建立并推行 SaaS 产品需求流转规范、需求内审与流程规范、岗位定级与能力评估体系，提升产研交付效率与质量标准化水平。</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content hidden" id="exp2-work-achievement">
+            <ul class="space-y-5 pl-8 border-l-2 border-gold-200">
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  作为主策，从 0 到 1 主导建设公司 AI 产品体系，覆盖 <strong class="text-navy-900">AI 制课</strong>（AIGC 课件结构化生成）、<strong class="text-navy-900">AI 视频总结</strong>（多模态内容理解 + 语义结构化 + RAG 知识萃取）、<strong class="text-navy-900">AI 智能裁剪</strong>（CV 智能识别与切割）、<strong class="text-navy-900">数字人</strong>（语音合成 + 面部动画驱动 + 实时渲染）、<strong class="text-navy-900">PPT 智能课件</strong>（大模型驱动的结构化内容生成）等核心功能模块，显著降低企业内容生产成本与人力依赖，使保利威成为业内第一家 AI 功能 SaaS 化应用的音视频公司。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  建立 SaaS 行业客户分级维护与精细化运营机制，深入理解金融、医疗、职业教育、公立教育等垂直场景的业务需求，推动 AI 产品在各行业的差异化落地，获行业标杆客户认可——建设银行（金融）、华医网（医疗培训）、环球优路（职教）、国家开放大学（公立校）。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  带领的产研团队获 <strong class="text-navy-900">2022 年最佳团队奖</strong>，个人获得 <strong class="text-navy-900">公司业绩二等功 ×2</strong>。
+                </span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 第3段：上海掌门教育（掌门1对1） -->
+        <article class="experience-item">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-2xl text-navy-900 font-semibold">上海掌门教育 · 掌门1对1</h3>
+              <p class="text-gold-600 font-medium text-lg">高级产品经理（P6 / 产研30人团队）</p>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2021.03 — 2023.09
+            </div>
+          </div>
+
+          <div class="border-b border-cream-300 mb-6">
+            <div class="flex gap-8">
+              <button class="tab-btn tab-active py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-content" data-exp="exp3">
+                工作内容
+              </button>
+              <button class="tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-achievement" data-exp="exp3">
+                工作业绩
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="exp3-work-content">
+            <ul class="space-y-5 pl-8 border-l-2 border-cream-300">
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【项目组建】</span>
+                <span class="text-navy-700">作为项目客户端负责人，从 0 搭建起"掌门 AI 1对1"学科辅导项目（含 PC 端、APP 端及配套后台），并主导老师端备课系统、师生排班系统、师生课堂交互设计、线索分配等核心功能的设计。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【企业应用】</span>
+                <span class="text-navy-700">内部企业微信 SCRM 项目（基于企微），服务集团 4 个 BU 的市场、运营及销售团队。</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content hidden" id="exp3-work-achievement">
+            <ul class="space-y-5 pl-8 border-l-2 border-gold-200">
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  三个月完成创新项目"掌门 AI 1对1"的客户端相关功能，使项目可以最小化面向市场使用，课程到课率 <strong class="text-navy-900">92%</strong>，降低企业供给端成本约 <strong class="text-navy-900">30%</strong>。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  完成企微 SCRM 系统搭建，并开放移动端便捷应用，服务集团 4 个 BU 的市场、运营及销售团队，用户覆盖公司数万人业务团队，提升客情管理效率，<strong class="text-navy-900">4 个 BU 的 KP 满意度 100%</strong>。
+                </span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 第4段：广州沐思信息（千聊/荷小鱼） -->
+        <article class="experience-item">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-2xl text-navy-900 font-semibold">广州沐思信息 · 千聊 / 荷小鱼</h3>
+              <p class="text-gold-600 font-medium text-lg">产品经理 / 用户增长产品负责人</p>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2019.07 — 2021.02
+            </div>
+          </div>
+
+          <div class="border-b border-cream-300 mb-6">
+            <div class="flex gap-8">
+              <button class="tab-btn tab-active py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-content" data-exp="exp4">
+                工作内容
+              </button>
+              <button class="tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-achievement" data-exp="exp4">
+                工作业绩
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="exp4-work-content">
+            <ul class="space-y-5 pl-8 border-l-2 border-cream-300">
+              <li class="timeline-dot">
+                <span class="text-navy-700">负责在线少儿教育产品——"荷小鱼"品牌的用户增长产品规划及项目管理。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【项目组建】</span>
+                <span class="text-navy-700">从 0 到 1 搭建起"荷小鱼轻课"平台，包含拼团、分销、售课商城、营销活动配置后台等基础功能。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【内容标准化】</span>
+                <span class="text-navy-700">与教研团队配合，评审并搭建标准化的 CMS 后台，支持课程素材的自定义配置。</span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">【中台搭建】</span>
+                <span class="text-navy-700">搭建"荷小鱼"品牌 CRM 系统、标签机制、数据中台。</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tab-content hidden" id="exp4-work-achievement">
+            <ul class="space-y-5 pl-8 border-l-2 border-gold-200">
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  "荷小鱼轻课"项目 <strong class="text-navy-900">月营收半年达百万</strong>，每月输送高质量转化例子 <strong class="text-navy-900">5,000+</strong>。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  通过标准化后台，实现自研课程产出速度巅峰可达 <strong class="text-navy-900">8 门 / 月</strong>，并实现了运营活动的灵活配置。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  半年时间内组建团队并搭建起企业中台，实现 CRM 系统、物流系统、线下商户分销系统等功能策划。
+                </span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- 第5段：广州六一信息（小灯塔学堂/画啦啦） -->
+        <article class="experience-item">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-2xl text-navy-900 font-semibold">广州六一信息 · 小灯塔学堂 / 画啦啦</h3>
+              <p class="text-gold-600 font-medium text-lg">产品经理</p>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2016.07 — 2018.05
+            </div>
+          </div>
+
+          <div class="border-b border-cream-300 mb-6">
+            <div class="flex gap-8">
+              <button class="tab-btn tab-active py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-content" data-exp="exp5">
+                工作内容
+              </button>
+              <button class="tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200" data-tab="work-achievement" data-exp="exp5">
+                工作业绩
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="exp5-work-content">
+            <ul class="space-y-5 pl-8 border-l-2 border-cream-300">
+
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">一、少儿通识在线教育｜「小灯塔学堂」（现「画啦啦小灯塔」微信服务号）</span>
+                <ul class="mt-2 ml-5 space-y-2 text-navy-700 text-[0.95em]">
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span>主导团购分销体系与课程观看 / 解锁规则策划，设计微信生态引粉入口。</span></li>
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span>主导优惠券系统、积分商城系统及复购推荐功能策划，构建活跃用户二次转化链路。</span></li>
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span>基于微信生态建立用户标签系统、消息多样化交互系统、域名分流系统（规避链接封禁）及核心指标监控预警机制。</span></li>
+                </ul>
+              </li>
+
+              <li class="timeline-dot">
+                <span class="text-navy-700 font-medium text-navy-800">二、少儿美术在线教育｜「画啦啦少儿美术」微信订阅号</span>
+                <ul class="mt-2 ml-5 space-y-2 text-navy-700 text-[0.95em]">
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span><strong>精细化运营：</strong>搭建教育平台用户分层体系，串联微信矩阵 100 万+用户，按意向 / 免费课 / 体验课 / 正式课精细化归类。</span></li>
+                  <li class="flex gap-2"><span class="text-gold-500 font-bold">●</span><span><strong>运营自动化：</strong>策划免费课配套督学小程序；策划系统自动分班功能，打通学员账号后台数据，以微信服务号主导完成师生排班流程自动化。</span></li>
+                </ul>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="tab-content hidden" id="exp5-work-achievement">
+            <ul class="space-y-5 pl-8 border-l-2 border-gold-200">
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  小灯塔学堂：一年内实现 <strong class="text-navy-900">180 万+ 用户净增</strong>，总体付费率近 <strong class="text-navy-900">90%</strong>，取关率控制在 10% 以内。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  支撑项目组 <strong class="text-navy-900">月营收 1,000 万</strong> 的持续达标。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  督学小程序降低社群运营端教学人力成本约 <strong class="text-navy-900">20%</strong>。
+                </span>
+              </li>
+              <li class="timeline-dot">
+                <span class="text-navy-700">
+                  微信矩阵用户分层体系串联 <strong class="text-navy-900">100 万+ 用户</strong>，为用户全生命周期价值挖掘及精细化图文推送提供数据支撑。
+                </span>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 分隔线 -->
+    <div class="section-divider my-16 md:my-20"></div>
+
+    <!-- ======== 区域四：作品展示 ======== -->
+    <section class="fade-in-up" id="section-works">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 font-semibold mb-3">作品展示</h2>
+        <div class="w-16 h-0.5 bg-gold-400 mx-auto mb-4"></div>
+        <p class="text-navy-600 text-sm md:text-base">点击卡片查看完整作品</p>
+      </div>
+
+      <!-- 作品卡片网格（等分） -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+        <!-- 作品卡片 1：咨询师之家 / B端咨询师管理SaaS -->
+        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
+            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
+              <div class="text-center">
+                <i class="fas fa-user-tie text-4xl text-navy-400 mb-2"></i>
+                <p class="text-xs text-navy-400">二维码占位</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
+                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">壹心理</div>
+            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
+              咨询师之家 · B端咨询师管理SaaS
+            </h3>
+            <p class="text-navy-600 text-sm leading-relaxed">
+              从0搭建B端咨询师管理SaaS系统，覆盖机构管理、入驻认证、结算系统、交付服务全链路，入驻咨询师2,000+。
+            </p>
+          </div>
+        </a>
+
+        <!-- 作品卡片 2：AI练习室 -->
+        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
+            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
+              <div class="text-center">
+                <i class="fas fa-robot text-4xl text-navy-400 mb-2"></i>
+                <p class="text-xs text-navy-400">二维码占位</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
+                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">AI产品</div>
+            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
+              咨询师AI练习室
+            </h3>
+            <p class="text-navy-600 text-sm leading-relaxed">
+              大模型驱动的多轮对话模拟系统，构建虚拟来访者角色，支持咨询技能训练，累计销售30,000+单。
+            </p>
+          </div>
+        </a>
+
+        <!-- 作品卡片 3：保利威AI产品体系 -->
+        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
+            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
+              <div class="text-center">
+                <i class="fas fa-brain text-4xl text-navy-400 mb-2"></i>
+                <p class="text-xs text-navy-400">二维码占位</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
+                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">保利威</div>
+            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
+              保利威AI产品体系
+            </h3>
+            <p class="text-navy-600 text-sm leading-relaxed">
+              业内首家AI功能SaaS化音视频公司，覆盖AI制课、视频总结、智能裁剪、数字人、PPT智能课件五大模块。
+            </p>
+          </div>
+        </a>
+
+        <!-- 作品卡片 4：ChatBot智能客服 -->
+        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
+            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
+              <div class="text-center">
+                <i class="fas fa-comments text-4xl text-navy-400 mb-2"></i>
+                <p class="text-xs text-navy-400">二维码占位</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
+                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">AI应用</div>
+            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
+              ChatBot智能客服
+            </h3>
+            <p class="text-navy-600 text-sm leading-relaxed">
+              基于大模型+RAG的智能客服系统，月均承接20万+咨询，人工介入率降低60%，大幅提升响应效率。
+            </p>
+          </div>
+        </a>
+
+        <!-- 作品卡片 5：掌门AI 1对1 -->
+        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
+            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
+              <div class="text-center">
+                <i class="fas fa-chalkboard-teacher text-4xl text-navy-400 mb-2"></i>
+                <p class="text-xs text-navy-400">二维码占位</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
+                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">掌门1对1</div>
+            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
+              掌门AI 1对1学科辅导
+            </h3>
+            <p class="text-navy-600 text-sm leading-relaxed">
+              三个月从0搭建AI 1对1学科辅导平台，覆盖PC/APP/后台全端，课程到课率92%，供给端成本降低30%。
+            </p>
+          </div>
+        </a>
+
+        <!-- 作品卡片 6：小灯塔学堂 -->
+        <a href="#" class="group card-hover block bg-white rounded-lg shadow-sm border border-cream-300 overflow-hidden">
+          <div class="aspect-square bg-gradient-to-br from-cream-100 to-cream-200 flex items-center justify-center relative overflow-hidden">
+            <div class="w-36 h-36 bg-white rounded-lg shadow-inner flex items-center justify-center border border-cream-300">
+              <div class="text-center">
+                <i class="fas fa-rocket text-4xl text-navy-400 mb-2"></i>
+                <p class="text-xs text-navy-400">二维码占位</p>
+              </div>
+            </div>
+            <div class="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-all duration-500 flex items-center justify-center">
+              <span class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 px-5 py-2 rounded-full text-navy-800 text-sm font-medium shadow-lg">
+                查看详情 <i class="fas fa-arrow-right ml-1.5 text-gold-500"></i>
+              </span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="inline-block px-2 py-0.5 bg-gold-100 text-gold-700 text-xs rounded mb-2">小灯塔</div>
+            <h3 class="font-display text-xl text-navy-900 font-semibold mb-2 group-hover:text-gold-600 transition-colors duration-300">
+              小灯塔学堂增长体系
+            </h3>
+            <p class="text-navy-600 text-sm leading-relaxed">
+              微信生态少儿通识教育平台，团购分销+复购体系，年增180万用户，付费率90%，月营收千万级。
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="mt-20 md:mt-28 pt-8 border-t border-cream-300 text-center">
+      <p class="text-navy-500 text-sm">
+        © 2026 <span class="text-navy-700 font-medium">「姓名」</span> · 个人简历主页 · 感谢您的阅读
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // ===== Tab 切换逻辑 =====
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const exp = this.dataset.exp;
+        const tab = this.dataset.tab;
+
+        // 切换按钮状态
+        document.querySelectorAll(`.tab-btn[data-exp="${exp}"]`).forEach(b => {
+          b.classList.remove('tab-active');
+        });
+        this.classList.add('tab-active');
+
+        // 切换内容显示
+        document.querySelectorAll(`.tab-content[id^="${exp}-"]`).forEach(content => {
+          content.classList.add('hidden');
+        });
+        const target = document.getElementById(`${exp}-${tab}`);
+        if (target) {
+          target.classList.remove('hidden');
+        }
+      });
+    });
+
+    // ===== 滚动渐入动画 =====
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -60px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>
