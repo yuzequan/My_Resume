@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -137,6 +137,7 @@
           <a href="#section-basic" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">基本信息</a>
           <a href="#section-summary" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">个人简介</a>
           <a href="#section-experience" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">从业经验</a>
+          <a href="#section-projects" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">项目经验</a>
           <a href="#section-works" class="nav-link text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">作品展示</a>
         </div>
         <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-navy-600 hover:text-gold-600">
@@ -150,6 +151,7 @@
         <a href="#section-basic" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">基本信息</a>
         <a href="#section-summary" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">个人简介</a>
         <a href="#section-experience" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">从业经验</a>
+        <a href="#section-projects" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">项目经验</a>
         <a href="#section-works" class="block py-2 text-navy-600 hover:text-gold-600 text-sm font-medium transition-colors">作品展示</a>
       </div>
     </div>
@@ -199,18 +201,12 @@
 
           <!-- 社交平台链接 -->
           <div class="flex items-center gap-4 mt-6">
-            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="GitHub">
-              <i class="fab fa-github text-lg"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="LinkedIn">
-              <i class="fab fa-linkedin-in text-lg"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="个人博客">
-              <i class="fas fa-globe text-lg"></i>
-            </a>
-            <a href="#" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300" title="微信">
+            <button onclick="openModal('wechat')" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300 cursor-pointer" title="微信">
               <i class="fab fa-weixin text-lg"></i>
-            </a>
+            </button>
+            <button onclick="openModal('email')" class="w-10 h-10 rounded-full bg-navy-800 text-white flex items-center justify-center hover:bg-gold-500 transition-colors duration-300 cursor-pointer" title="邮箱">
+              <i class="fas fa-envelope text-lg"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -231,7 +227,9 @@
           <!-- 装饰引号 -->
           <i class="fas fa-quote-left text-gold-200 text-4xl absolute top-6 left-6"></i>
           <p class="text-navy-700 text-lg leading-loose text-balance relative z-10 pl-6">
-            十年互联网产品经理经验，深耕在线教育与心理健康赛道，擅长从 0 到 1 搭建产品体系与 AI 应用落地。历任壹心理、保利威、掌门 1 对 1 等头部企业高级产品经理，累计带领 15-30 人产研团队，主导过 B 端 SaaS 管理系统、C 端教育平台、AI 对话产品等多条核心产品线。精通大模型应用（RAG、Agent、多模态）、用户增长体系、B/C 双端业务闭环设计，具备敏锐的业务洞察力与跨团队协作能力，曾多次带领团队实现业务规模化突破与成本显著优化。
+            十年互联网产品经理经验，深耕在线教育与心理健康赛道，擅长从 0 到 1 搭建产品体系与 AI 应用落地。
+            历任壹心理、保利威、掌门 1 对 1 等头部企业高级产品经理，累计带领 15-30 人产研团队，主导过 B 端 SaaS 管理系统、C 端教育平台、AI 对话产品等多条核心产品线。
+            有大模型应用（RAG、Agent）实际项目落地经验、用户增长体系、B/C 双端业务闭环设计，具备敏锐的业务洞察力与跨团队协作能力，曾多次带领团队实现业务规模化突破与成本显著优化。
           </p>
           <i class="fas fa-quote-right text-gold-200 text-4xl absolute bottom-6 right-6"></i>
         </div>
@@ -581,7 +579,133 @@
     <!-- 分隔线 -->
     <div class="section-divider my-16 md:my-20"></div>
 
-    <!-- ======== 区域四：作品展示 ======== -->
+    <!-- ======== 区域四：项目经验 ======== -->
+    <section class="fade-in-up" id="section-projects">
+      <div class="text-center mb-12">
+        <h2 class="font-display text-3xl md:text-4xl text-navy-900 font-semibold mb-3">项目经验</h2>
+        <div class="w-16 h-0.5 bg-gold-400 mx-auto"></div>
+      </div>
+
+      <!-- 项目经验 Tab 导航 -->
+      <div class="border-b border-cream-300 mb-8">
+        <div class="flex flex-wrap gap-4 md:gap-8">
+          <button class="project-tab-btn tab-active py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200 text-sm md:text-base" data-project="proj1">
+            B端SaaS+AI项目
+          </button>
+          <button class="project-tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200 text-sm md:text-base" data-project="proj2">
+            AI1对1动态课件系统
+          </button>
+          <button class="project-tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200 text-sm md:text-base" data-project="proj3">
+            咨询师AI练习室
+          </button>
+          <button class="project-tab-btn py-3 px-1 text-navy-600 hover:text-navy-900 transition-colors duration-200 text-sm md:text-base" data-project="proj4">
+            产研工单提效专项
+          </button>
+        </div>
+      </div>
+
+      <!-- 项目内容 -->
+      <div class="bg-white rounded-lg shadow-sm border border-cream-300 p-6 md:p-10">
+
+        <!-- 项目1：B端SaaS+AI项目 -->
+        <div class="project-content" id="proj1-content">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-navy-900 font-semibold">【易方/保利威】B端SaaS+AI项目</h3>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2023.2 ~ 2023.6
+            </div>
+          </div>
+          <div class="space-y-5 pl-8 border-l-2 border-cream-300">
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目角色】</span>
+              <span class="text-navy-700">作为该AI攻坚项目的产品与项目双重负责人，我全程主导了从0到1的商业化落地，核心职责覆盖战略规划与项目交付：产品侧（战略与定义）：主导前期市场调研、竞品分析与商业价值评估，明确资源投入量和产出量化标准，统筹产品需求与功能定义，确保产品方向与客户价值对齐。项目侧（执行与管理）：作为项目经理，负责项目全生命周期的资源调配、跨部门协调、风险管控及质量保障，推动项目按时、高质量交付。</span>
+            </li>
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目简述】</span>
+              <span class="text-navy-700">本项目启动于AIGC技术爆发的初期（ChatGPT兴起阶段）。核心产品矩阵包括：AI数字人（企业只需提供数分钟的视频素材，即可生成与真人形象、音色高度一致的数字人分身）、AI制课（上传带备注文字的PPT，系统自动识别内容并转为口播稿，配合数字人技术一键生成教学视频）、智能剪辑（将视频内容转为可编辑的"文本"，通过圈选文字即可完成裁剪、重组）、智能答疑助理（连接企业私有知识库与直播/点播视频，为学员提供实时问答服务）。成功实现降本、提效、赋能三重价值闭环。</span>
+            </li>
+          </div>
+        </div>
+
+        <!-- 项目2：AI1对1动态课件系统 -->
+        <div class="project-content hidden" id="proj2-content">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-navy-900 font-semibold">掌门教育"AI1对1动态课件系统"</h3>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2021.3 ~ 2021.8
+            </div>
+          </div>
+          <div class="space-y-5 pl-8 border-l-2 border-cream-300">
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目角色】</span>
+              <span class="text-navy-700">作为该项目产品负责人，全面主导了从0到1的产品落地，核心职责包括：战略与架构（负责"AI1对1"项目的整体框架设计、商业模式论证及原"掌门1对1"业务的逻辑精简）、研发与管理（全流程跟进系统研发，并直接管理产研团队，确保项目按期高质量交付）。</span>
+            </li>
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目简述】</span>
+              <span class="text-navy-700">项目启动于2021年，彼时K12在线教育行业正面临双重困境。核心策略是将一堂传统的2小时真人辅导课，拆解为"1.5小时AI智能课件学习 + 0.5小时真人老师精讲"两个环节。核心模块包括：AI智能课件模块（自适应学习引擎、即时反馈机制）、助教协同模块（轻量级课堂管理，助教以1:8或1:12的高效配比进行线上巡场）、数据驱动模块（学情报告自动生成，赋能真人老师精准辅导）。成功实现降低客户成本、提升运营效率、拉长客户生命周期三重价值。</span>
+            </li>
+          </div>
+        </div>
+
+        <!-- 项目3：咨询师AI练习室 -->
+        <div class="project-content hidden" id="proj3-content">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-navy-900 font-semibold">咨询师AI练习室</h3>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2024.10 ~ 2025.10
+            </div>
+          </div>
+          <div class="space-y-5 pl-8 border-l-2 border-cream-300">
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目角色】</span>
+              <span class="text-navy-700">作为该项目产品负责人，全面主导了从0到1的产品落地，核心职责包括：架构设计和成本测算（负责"AI练习室"的整体框架设计，涵盖大语言模型LLM的应用选型、多轮对话交互逻辑设计，以及基于Token消耗的成本测算）、研发与管理（主导心理学知识库构建、Prompt提示词分层设计、教研内容标准化产出及产品研发，并直接管理研发团队，确保项目按期高质量交付）。</span>
+            </li>
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目简述】</span>
+              <span class="text-navy-700">项目立项于传统心理咨询培训行业的两大结构性矛盾：供需两端严重错配、现有解决方案的致命缺陷。关键技术架构包括：大语言模型LLM（底层推理引擎）、检索增强生成RAG（对接企业私有知识库）、提示词工程（结构化提示词模板）、多轮对话上下文管理。产品设计了两种核心训练模式：任务闯关（专项技能提升）、角色练习（全流程咨询模拟）。核心交付物是咨询师胜任力模型分析报告。</span>
+            </li>
+          </div>
+        </div>
+
+        <!-- 项目4：C端公司产研部门整体工单效率提效专项 -->
+        <div class="project-content hidden" id="proj4-content">
+          <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-6 gap-2">
+            <div>
+              <h3 class="font-display text-xl md:text-2xl text-navy-900 font-semibold">C端公司产研部门整体工单效率提效专项</h3>
+            </div>
+            <div class="text-navy-600 text-sm md:text-base">
+              <i class="far fa-calendar-alt mr-2 text-gold-500"></i>
+              2024.11 ~ 2025.04
+            </div>
+          </div>
+          <div class="space-y-5 pl-8 border-l-2 border-cream-300">
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目角色】</span>
+              <span class="text-navy-700">作为该项目产品负责人，全面主导了产研部门沟通流程与管理现状的盘点诊断、飞书自动化流程的可行性评估与技术接入、流程优化方案的推进落地、流程规范文档的撰写，以及全员组织的系统培训与推广工作。</span>
+            </li>
+            <li class="timeline-dot list-none">
+              <span class="text-navy-700 font-medium text-navy-800">【项目简述】</span>
+              <span class="text-navy-700">项目启动时，公司产研部门面临四大结构性沟通障碍：文档标准不统一、缺乏优先级统一管控制度、缺乏稳定且即时的信息同步机制、缺乏全局数据看板。解决方案包括：统一文档标准（飞书文档）、建立需求优先级定调机制、建立自动化工单管理与状态同步机制（飞书IM+文档+项目）、建立产研效率数据看板。最终实现效率提升25%、跨部门沟通投诉率从20%下降至近乎为0。</span>
+            </li>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 分隔线 -->
+    <div class="section-divider my-16 md:my-20"></div>
+
+    <!-- ======== 区域五：作品展示 ======== -->
     <section class="fade-in-up" id="section-works">
       <div class="text-center mb-12">
         <h2 class="font-display text-3xl md:text-4xl text-navy-900 font-semibold mb-3">作品展示</h2>
@@ -679,6 +803,22 @@
       </div>
     </section>
 
+    <!-- 弹窗 -->
+    <div id="modal-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" onclick="closeModal(event)">
+      <div class="bg-white rounded-xl shadow-2xl max-w-sm w-full p-8 relative transform transition-all duration-300 scale-95 opacity-0" id="modal-card" onclick="event.stopPropagation()">
+        <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-cream-100 text-navy-600 hover:bg-gold-100 hover:text-gold-700 flex items-center justify-center transition-colors duration-200">
+          <i class="fas fa-times text-sm"></i>
+        </button>
+        <div class="text-center">
+          <div class="w-16 h-16 rounded-full bg-navy-800 text-white flex items-center justify-center mx-auto mb-4" id="modal-icon-container">
+            <i class="fab fa-weixin text-2xl" id="modal-icon"></i>
+          </div>
+          <h3 class="font-display text-xl text-navy-900 font-semibold mb-2" id="modal-title">微信</h3>
+          <p class="text-navy-600 text-lg" id="modal-content">Yzq_03419</p>
+        </div>
+      </div>
+    </div>
+
     <!-- 页脚 -->
     <footer class="mt-20 md:mt-28 pt-8 border-t border-cream-300 text-center">
       <p class="text-navy-500 text-sm">
@@ -690,7 +830,7 @@
 
   <!-- JavaScript -->
   <script>
-    // ===== Tab 切换逻辑 =====
+    // ===== Tab 切换逻辑（从业经验） =====
     document.querySelectorAll('.tab-btn').forEach(btn => {
       btn.addEventListener('click', function() {
         const exp = this.dataset.exp;
@@ -710,6 +850,59 @@
         }
       });
     });
+
+    // ===== Tab 切换逻辑（项目经验） =====
+    document.querySelectorAll('.project-tab-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const project = this.dataset.project;
+
+        document.querySelectorAll('.project-tab-btn').forEach(b => {
+          b.classList.remove('tab-active');
+        });
+        this.classList.add('tab-active');
+
+        document.querySelectorAll('.project-content').forEach(content => {
+          content.classList.add('hidden');
+        });
+        const target = document.getElementById(`${project}-content`);
+        if (target) {
+          target.classList.remove('hidden');
+        }
+      });
+    });
+
+    // ===== 弹窗逻辑 =====
+    const modalOverlay = document.getElementById('modal-overlay');
+    const modalCard = document.getElementById('modal-card');
+    const modalIcon = document.getElementById('modal-icon');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+
+    function openModal(type) {
+      if (type === 'wechat') {
+        modalIcon.className = 'fab fa-weixin text-2xl';
+        modalTitle.textContent = '微信';
+        modalContent.textContent = 'Yzq_03419';
+      } else if (type === 'email') {
+        modalIcon.className = 'fas fa-envelope text-2xl';
+        modalTitle.textContent = '邮箱';
+        modalContent.textContent = '1225680461@qq.com';
+      }
+      modalOverlay.classList.remove('hidden');
+      // 强制重绘以触发动画
+      void modalOverlay.offsetWidth;
+      modalCard.classList.remove('scale-95', 'opacity-0');
+      modalCard.classList.add('scale-100', 'opacity-100');
+    }
+
+    function closeModal(event) {
+      if (event && event.target !== modalOverlay && event.target.closest('#modal-card')) return;
+      modalCard.classList.remove('scale-100', 'opacity-100');
+      modalCard.classList.add('scale-95', 'opacity-0');
+      setTimeout(() => {
+        modalOverlay.classList.add('hidden');
+      }, 300);
+    }
 
     // ===== 滚动渐入动画 =====
     const observerOptions = {
@@ -815,3 +1008,4 @@
 
 </body>
 </html>
+
